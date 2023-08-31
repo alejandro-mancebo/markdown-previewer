@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const GuideContainer = styled.div`
-  margin: .5rem 0;
+  margin: 5rem 0 .2rem;
   padding: 1rem;
   background-color: #FFFFE8;
   border: 1px solid #D8D8D7; 

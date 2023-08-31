@@ -8,6 +8,7 @@ const Title = styled.h1`
   padding-right: 1em;
 `;
 
+
 const Button = styled.button`
   border-radius: 8px;
   border: 0;
@@ -29,11 +30,16 @@ const Button = styled.button`
   outline: 4px auto -webkit-focus-ring-color;
 }
 `
+
 const HeaderContainer = styled.div`
+  position: fixed;
+  top: 0;
+  width: 75em;
   display: flex;
   justify-content: space-between;
   background-color: mediumturquoise;
 `
+
 interface HeaderProps {
   onToggleGuide: React.MouseEventHandler;
 }
