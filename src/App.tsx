@@ -7,25 +7,33 @@ import styled from 'styled-components'
 
 import './App.css'
 
-const DisplayContainer = styled.div<{ $diplayMarkdownGuide: boolean; }>`
+const DisplayContainer = styled.div<{ $showGuide: boolean; }>`
   display: flex;
-  margin: ${props => props.$diplayMarkdownGuide === false ? "5rem 0 0" : "0"};
+  margin: 5rem 0 0
+  
 `
+// margin-top: ${props => props.$showGuide === true ? "5rem" : "5rem"};
 
 function App() {
-  const [diplayMarkdownGuide, setDisplayMarkdownGuide] = useState(true)
+  const [showGuide, setShowGuide] = useState(false);
+  const [markdown, setMarkdown] = useState(`# Hello World`);
 
   const displayFunction = () => {
-    setDisplayMarkdownGuide(!diplayMarkdownGuide)
+    setShowGuide(!showGuide)
   }
+
+  const handleChange = () => {
+    setMarkdown(markdown)
+  }
+
 
   return (
     <>
       <Header onToggleGuide={displayFunction} />
-      {diplayMarkdownGuide && <MarkdownGuide />}
-      <DisplayContainer $diplayMarkdownGuide>
-        < MarkdownInput />
-        < MarkdownOutput />
+      {showGuide && <MarkdownGuide />}
+      <DisplayContainer $showGuide>
+        < MarkdownInput value={markdown} onChange={handleChange} />
+        < MarkdownOutput markdown={markdown} />
       </DisplayContainer>
     </>
   )

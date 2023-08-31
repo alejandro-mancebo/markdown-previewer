@@ -10,11 +10,11 @@ const OutputContainer = styled.div`
 interface MarkdownOutputProps {
   markdown: string;
 }
-// { markdown }: MarkdownOutputProps
-export default function MarkdownOutput() {
+// 
+export default function MarkdownOutput({ markdown }: MarkdownOutputProps) {
   return (
     <OutputContainer>
-      MarkdownOutput
+      {markdown}
     </OutputContainer>
   )
 }

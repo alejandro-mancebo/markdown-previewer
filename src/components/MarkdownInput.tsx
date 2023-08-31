@@ -24,11 +24,11 @@ interface MarkdownInputProps {
 }
 
 
-// props: MarkdownInputProps
-export default function MarkdownInput() {
+// 
+export default function MarkdownInput(props: MarkdownInputProps) {
   return (
     <InputContainer>
-      MarkdownInput
+      {props.value}
     </InputContainer>
   )
 }
