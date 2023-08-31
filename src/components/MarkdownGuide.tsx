@@ -28,16 +28,6 @@ export default function MarkdownGuide() {
           <li>```block code```</li>
           <li>- list item</li>
         </ul>
-
-
-
-
-
-
-
-
-
-
       </code>
     </GuideContainer>
   )

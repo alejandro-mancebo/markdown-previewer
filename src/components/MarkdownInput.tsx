@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
+
 
 const InputContainer = styled.textarea`
   padding: 1rem;
@@ -14,21 +15,13 @@ const InputContainer = styled.textarea`
   
 `
 
-const StyledTextArea = styled.textarea`
-
-`
-
 interface MarkdownInputProps {
   value: string;
-  onChange(): void;
+  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
-
-// 
-export default function MarkdownInput(props: MarkdownInputProps) {
+export default function MarkdownInput({ value, onChange }: MarkdownInputProps ) {
   return (
-    <InputContainer>
-      {props.value}
-    </InputContainer>
+    <InputContainer value={value} onChange={onChange} />
   )
 }

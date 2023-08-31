@@ -3,6 +3,7 @@ import Header from './components/Header'
 import MarkdownGuide from './components/MarkdownGuide'
 import MarkdownInput from './components/MarkdownInput'
 import MarkdownOutput from './components/MarkdownOutput'
+
 import styled from 'styled-components'
 
 import './App.css'
@@ -10,7 +11,6 @@ import './App.css'
 const DisplayContainer = styled.div<{ $showGuide: boolean; }>`
   display: flex;
   margin: 5rem 0 0
-  
 `
 // margin-top: ${props => props.$showGuide === true ? "5rem" : "5rem"};
 
@@ -22,8 +22,8 @@ function App() {
     setShowGuide(!showGuide)
   }
 
-  const handleChange = () => {
-    setMarkdown(markdown)
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setMarkdown(e.target.value);
   }
 
 
